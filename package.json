@@ -1,0 +1,60 @@
+{
+  "name": "online-book-reader",
+  "version": "1.0.0",
+  "description": "A modern, responsive web application for browsing and discovering free books from Project Gutenberg",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -p 8000",
+    "dev": "npx live-server --port=8000 --open=/",
+    "serve": "python -m http.server 8000",
+    "serve-php": "php -S localhost:8000",
+    "validate-html": "npx html-validate index.html",
+    "validate-css": "npx stylelint styles.css",
+    "validate-js": "npx eslint script.js",
+    "format": "npx prettier --write *.html *.css *.js *.md",
+    "check-links": "npx broken-link-checker http://localhost:8000",
+    "lighthouse": "npx lighthouse http://localhost:8000 --output=html --output-path=./lighthouse-report.html",
+    "test": "echo \"No tests specified yet\" && exit 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/online-book-reader.git"
+  },
+  "keywords": [
+    "books",
+    "reading",
+    "literature",
+    "project-gutenberg",
+    "web-app",
+    "responsive",
+    "javascript",
+    "html",
+    "css",
+    "book-reader",
+    "library",
+    "free-books"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/online-book-reader/issues"
+  },
+  "homepage": "https://github.com/yourusername/online-book-reader#readme",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "html-validate": "^8.0.0",
+    "lighthouse": "^11.0.0",
+    "live-server": "^1.2.2",
+    "prettier": "^3.0.0",
+    "serve": "^14.0.0",
+    "stylelint": "^15.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

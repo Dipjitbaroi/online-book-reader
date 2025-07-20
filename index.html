@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Book Reader</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📚</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showPage('home')">📚 BookReader</a>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')" class="nav-link active">Home</a></li>
+                <li><a href="#" onclick="showPage('wishlist')" class="nav-link">Wishlist</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <!-- Search and Filter Section -->
+            <div class="search-filter-section">
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <span class="search-icon"></span>
+                        <input type="text" id="search-input" placeholder="Search books by title or author..." oninput="handleSearch()">
+                    </div>
+                    <select id="genre-filter" class="filter-select" onchange="handleGenreFilter()">
+                        <option value="">All Genres</option>
+                    </select>
+                    <select id="page-select" class="page-select" onchange="handlePageSelect()">
+                        <option value="32">32 per page</option>
+                        <option value="20">20 per page</option>
+                        <option value="10">10 per page</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Loading -->
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Loading amazing books...</p>
+            </div>
+
+            <!-- Books Grid -->
+            <div id="books-grid" class="books-grid" style="display: none;"></div>
+
+            <!-- No Results -->
+            <div id="no-results" class="no-results" style="display: none;">
+                <div class="no-results-icon">No Results</div>
+                <h3>No books found</h3>
+                <p>Try adjusting your search criteria or browse different genres</p>
+            </div>
+
+            <!-- Pagination -->
+            <div id="pagination" class="pagination" style="display: none;"></div>
+        </div>
+
+        <!-- Wishlist Page -->
+        <div id="wishlist-page" class="page">
+            <div class="page-header">
+                <h1>My Wishlist</h1>
+                <p class="page-subtitle">Your favorite books collection</p>
+            </div>
+            <div id="wishlist-empty" class="wishlist-empty">
+                <div class="empty-icon">Empty</div>
+                <h3>Your wishlist is empty</h3>
+                <p>Start adding some books to your collection!</p>
+                <button class="browse-btn" onclick="showPage('home')">Browse Books</button>
+            </div>
+            <div id="wishlist-grid" class="books-grid"></div>
+        </div>
+
+        <!-- Book Detail Page -->
+        <div id="book-detail-page" class="page">
+            <button class="back-btn" onclick="goBack()">← Back</button>
+            <div id="book-detail-content" class="book-detail"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Online Book Reader @Dip Jit Baroi. Powered by <a href="https://gutendex.com" target="_blank">Project Gutenberg</a></p>
+            <p>Discover thousands of free classic books</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
