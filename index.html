@@ -29,10 +29,10 @@
                         <span class="search-icon"></span>
                         <input type="text" id="search-input" placeholder="Search books by title or author..." oninput="handleSearch()">
                     </div>
-                    <select id="genre-filter" class="filter-select" onchange="handleGenreFilter()">
+                    <select id="genre-filter" class="filter-select" onchange="handleGenreFilter()" aria-label="Filter books by genre">
                         <option value="">All Genres</option>
                     </select>
-                    <select id="page-select" class="page-select" onchange="handlePageSelect()">
+                    <select id="page-select" class="page-select" onchange="handlePageSelect()" aria-label="Select number of books per page">
                         <option value="32">32 per page</option>
                         <option value="20">20 per page</option>
                         <option value="10">10 per page</option>
@@ -85,7 +85,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Online Book Reader @Dip Jit Baroi. Powered by <a href="https://gutendex.com" target="_blank">Project Gutenberg</a></p>
+            <p>&copy; 2025 Online Book Reader @Dip Jit Baroi. Powered by <a href="https://gutendex.com" target="_blank" rel="noopener">Project Gutenberg</a></p>
             <p>Discover thousands of free classic books</p>
         </div>
     </footer>
